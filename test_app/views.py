@@ -9,3 +9,7 @@ def saludo(request):
 def saludar_a(request, nombre):
     rightNow = datetime.now().strftime("%H:%M:%S") #Hora:minuto:segundos
     return HttpResponse(f"Hola, {nombre.capitalize()}! Son las {rightNow}")
+
+
+def mostrar_template(request):
+    return render(request, "test_app/index.html")
