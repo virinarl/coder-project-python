@@ -6,4 +6,6 @@ class Curso(models.Model):
     camada = models.IntegerField()
     
     
-
+class Familiares(models.Model):
+    nombre=models.CharField(max_length=20)
+    edad=models.IntegerField()
