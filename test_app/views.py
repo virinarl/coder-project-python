@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from test_app.models import Curso
 # Create your views here.
 
 def saludo(request):
@@ -12,4 +13,17 @@ def saludar_a(request, nombre):
 
 
 def mostrar_template(request):
-    return render(request, "test_app/index.html")
+    context = {}
+    
+    if request.GET:
+        context["nombre"] = request.GET["nombre"]
+        
+    return render(request, "test_app/index.html", context )
+
+def listar_cursos(request):
+    context={}
+    
+    context["cursos"] = Curso.objects.all()
+    return render(request, "test_app/lista_cursos.html", context)
+    
+        

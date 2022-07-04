@@ -7,13 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="" method="get">
-      <label for="nombre">Nombre:</label>
-      <input type="text" name="nombre" />
-      <button type="submit">Enviar</button>
-    </form>
-
-    <h2>Hola, ¿Cómo estás, {{nombre}}?</h2> 
-    
+    <ul>
+      {% for curso in cursos %}
+      <li>Nombre: {{curso.nombre}} - Camada: {{curso.camada}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
