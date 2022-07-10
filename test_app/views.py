@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-from test_app.models import Curso, Familiares
+from test_app.models import Curso, Familiaresnt
 # Create your views here.
 
 def saludo(request):
